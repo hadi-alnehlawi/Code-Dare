@@ -3,6 +3,7 @@ class TabularArray():
     def __init__(self,A,K):
         self.A = A
         self.K = K
+        self.separator_cell = ("-" * self.width_of_cell()) + "+"
 
 
     def number_of_digit(self,number):
@@ -57,18 +58,21 @@ class TabularArray():
     def draw_separator(self):
         result = "+"
         width = self.width_of_cell()
-        cell = ""
         for i in range(1,self.K+1):
-            cell = "-" * width
-            cell += "+"
-            result += cell
+            result += self.separator_cell
         return result
 
     def draw(self):
         result = ""
         index = 0
-        for i in range(self.number_of_lines()):
-            if i % 2 == 0:
+        number_of_line = self.number_of_lines()
+        number_cell_in_last_line = len(self.A) % self.K
+        for i in range(number_of_line):
+            if ( (self.K > len(self.A)) and (i == 0) ) or ((i == (number_of_line -1)) and (number_cell_in_last_line != 0)):
+               result += "+" + number_cell_in_last_line *  self.separator_cell
+            elif (i % 2 == 0) and (i != (number_of_line -1)):
+                result += self.draw_separator()
+            elif ((i % 2 == 0) and (i == (number_of_line -1))):
                 result += self.draw_separator()
             else:
                 result +=  "|"
@@ -80,6 +84,15 @@ class TabularArray():
                         index += 1
                     else:
                         break
-
             result += "\n"
         return result
+
+
+if __name__ == "__main__":    
+    A = []
+    for i in range(1,15):
+        A.append(i)
+    print("A = ",A)
+    for i in range(1,(len(A)-1)):
+        print("K = ",i)
+        print(TabularArray(A,i).draw())

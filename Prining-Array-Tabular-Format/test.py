@@ -1,4 +1,4 @@
-from tabular_array import *
+from solution import TabularArray
 import unittest
 
 
@@ -72,16 +72,6 @@ class TestTabularArray(unittest.TestCase):
         K = 5
         tabular_array = TabularArray(A,K)
         self.assertEqual(tabular_array.number_of_lines(), 5)
-
-    def test_draw(self):
-        A = [2,289,33,29,900,3,22,4,100,9] # 10
-        K = 4
-        tabular_array = TabularArray(A,K)
-        new_line = '\n'
-        actual_output = f"+-----+-----+{new_line}+-----+-----+-----+{new_line}+-----+-----+-----+"
-        self.assertEqual(tabular_array.draw(),"TEST" )
-    #
-
 
 
 if __name__ == "__main__":
