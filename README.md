@@ -5,7 +5,7 @@
 * [Contribute](#contribute)
 
 ## Introduction
-The purpose of CodeCha is to solve most of the simpliest programatically challenges in Python lanagues. These challenges are not only simple, but also complex and intensive at the same time.
+The purpose of this project is to solve most of the simplest programmatically challenges in Python language. These challenges are not only simple, but also complex and intensive at the same time.
 
 ## Structure
 Each challenge is created in a seperate folder which cotains the README question desciption and its solution in another file which is named as "challenge_name_solution.py". Additionaly, test_challenge_name.py is added to test all the possible cases.
@@ -44,4 +44,3 @@ $ py.test
 ## Contribute
 Please fee free to contribute and share pull request any chalenge you might find it interesting. The code is licensed under [MIT](https://mit-license.org).
 I would be happy to hear any feeback or comments: hadi.alnehlawi@gmail.com
-
