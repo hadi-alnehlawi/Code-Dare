@@ -12,7 +12,7 @@ class TabularArray():
             count = count + 1
             number = number // 10
         return count
-
+        
     def width_of_cell(self):
         max_A = max(self.A)
         return self.number_of_digit(max_A)
